@@ -1,13 +1,31 @@
 import styled from 'styled-components'
 
-import { animacaoSurgir, breakpoints } from '../../styles'
+import { animacaoSurgir, breakpoints, cores } from '../../styles'
+
+export const Secao = styled.section`
+  padding: 64px 0 96px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 40px 0 64px;
+  }
+`
+
+export const Titulo = styled.h2`
+  color: ${cores.titulo};
+  font-size: 28px;
+  font-weight: 900;
+`
+
+export const Subtitulo = styled.p`
+  margin: 6px 0 32px;
+  color: ${cores.texto};
+  font-size: 16px;
+`
 
 export const Lista = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 80px;
-  row-gap: 56px;
-  margin: 80px 0 120px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 24px;
 
   li {
     display: flex;
@@ -23,12 +41,10 @@ export const Lista = styled.ul`
   }
 
   @media (max-width: ${breakpoints.desktop}) {
-    column-gap: 32px;
+    grid-template-columns: 1fr 1fr;
   }
 
   @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: 1fr;
-    row-gap: 40px;
-    margin: 56px 0 80px;
   }
 `

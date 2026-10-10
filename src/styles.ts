@@ -6,6 +6,8 @@ export const cores = {
   bege: '#FFEBD9',
   fundo: '#FFF8F2',
   branco: '#FFFFFF',
+  titulo: '#4A1F1F',
+  texto: '#7A5C58',
 }
 
 export const breakpoints = {
@@ -14,14 +16,14 @@ export const breakpoints = {
 }
 
 export const sombras = {
-  suave: '0 4px 14px rgba(230, 103, 103, 0.1)',
-  elevada: '0 18px 36px rgba(230, 103, 103, 0.28)',
+  suave: '0 6px 20px rgba(74, 31, 31, 0.08)',
+  elevada: '0 20px 40px rgba(230, 103, 103, 0.25)',
 }
 
 // deixa as fotos de comida mais quentes e vivas
-export const filtroApetitoso = 'saturate(1.3) contrast(1.08) brightness(1.04)'
+export const filtroApetitoso = 'saturate(1.15) contrast(1.05) brightness(1.02)'
 export const filtroApetitosoHover =
-  'saturate(1.5) contrast(1.12) brightness(1.08)'
+  'saturate(1.3) contrast(1.08) brightness(1.05)'
 
 const surgir = keyframes`
   from {

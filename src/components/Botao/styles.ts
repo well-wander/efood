@@ -7,11 +7,18 @@ type Props = {
   $variante: 'primario' | 'secundario'
 }
 
-const estiloBase = css<Props>`
+export const Seta = styled.span`
   display: inline-block;
-  padding: 8px 16px;
+  margin-left: 8px;
+  transition: transform 0.25s ease;
+`
+
+const estiloBase = css<Props>`
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 14px;
   line-height: 16px;
   font-weight: 700;
@@ -21,8 +28,7 @@ const estiloBase = css<Props>`
   background-color: ${({ $variante }) =>
     $variante === 'primario' ? cores.salmao : cores.bege};
   color: ${({ $variante }) =>
-    $variante === 'primario' ? cores.bege : cores.salmao};
-  width: ${({ $variante }) => ($variante === 'primario' ? 'auto' : '100%')};
+    $variante === 'primario' ? cores.branco : cores.salmao};
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
@@ -35,7 +41,11 @@ const estiloBase = css<Props>`
     color: ${({ $variante }) =>
       $variante === 'primario' ? cores.branco : cores.salmaoEscuro};
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 8px 16px rgba(74, 31, 31, 0.2);
+
+    ${Seta} {
+      transform: translateX(6px);
+    }
   }
 
   &:active {

@@ -19,6 +19,7 @@ const Botao = ({
     return (
       <S.BotaoLink to={to} title={title} $variante={variante}>
         {children}
+        <S.Seta aria-hidden="true">→</S.Seta>
       </S.BotaoLink>
     )
   }

@@ -9,7 +9,7 @@ import {
 
 export const Capa = styled.div`
   position: relative;
-  height: 232px;
+  height: 208px;
   overflow: hidden;
 
   &::after {
@@ -18,7 +18,7 @@ export const Capa = styled.div`
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.28) 0%,
+      rgba(0, 0, 0, 0.3) 0%,
       rgba(0, 0, 0, 0) 40%
     );
     pointer-events: none;
@@ -41,7 +41,6 @@ export const Card = styled.article`
   flex-direction: column;
   width: 100%;
   overflow: hidden;
-  border: 1px solid ${cores.salmao};
   border-radius: 16px;
   background-color: ${cores.branco};
   box-shadow: ${sombras.suave};
@@ -62,30 +61,29 @@ export const Card = styled.article`
 
 export const Tags = styled.div`
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 12px;
+  left: 12px;
+  right: 12px;
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
+  gap: 6px;
 `
 
 export const Conteudo = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 16px 16px 20px;
+  padding: 16px;
 `
 
 export const Cabecalho = styled.div`
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 12px;
+  gap: 12px;
+  margin-bottom: 8px;
+  color: ${cores.titulo};
   font-size: 18px;
   font-weight: 700;
 `
@@ -96,19 +94,21 @@ export const Nome = styled.h3`
 
 export const Nota = styled.span`
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  font-size: 16px;
 
   img {
-    width: 21px;
-    height: 21px;
+    width: 20px;
+    height: 20px;
   }
 `
 
 export const Descricao = styled.p`
   flex: 1;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  color: ${cores.texto};
   font-size: 14px;
   line-height: 22px;
-  white-space: pre-line;
 `
