@@ -8,7 +8,9 @@ type Props = {
 
 const Produto = ({ produto }: Props) => (
   <S.Card>
-    <S.Imagem src={produto.imagem} alt={produto.nome} />
+    <S.Capa>
+      <S.Imagem src={produto.imagem} alt={produto.nome} />
+    </S.Capa>
     <S.Nome>{produto.nome}</S.Nome>
     <S.Descricao>{produto.descricao}</S.Descricao>
     <Botao

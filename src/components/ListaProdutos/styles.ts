@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { breakpoints } from '../../styles'
+import { animacaoSurgir, breakpoints } from '../../styles'
 
 export const Lista = styled.ul`
   display: grid;
@@ -10,6 +10,15 @@ export const Lista = styled.ul`
 
   li {
     display: flex;
+    ${animacaoSurgir}
+  }
+
+  li:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  li:nth-child(n + 3) {
+    animation-delay: 0.2s;
   }
 
   @media (max-width: ${breakpoints.desktop}) {
@@ -18,5 +27,6 @@ export const Lista = styled.ul`
 
   @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: 1fr;
+    margin: 40px 0 80px;
   }
 `

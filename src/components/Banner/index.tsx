@@ -7,7 +7,8 @@ type Props = {
 }
 
 const Banner = ({ categoria, nome, imagem }: Props) => (
-  <S.BannerContainer style={{ backgroundImage: `url(${imagem})` }}>
+  <S.BannerContainer>
+    <S.Imagem src={imagem} alt="" />
     <div className="container">
       <S.Categoria>{categoria}</S.Categoria>
       <S.Nome>{nome}</S.Nome>

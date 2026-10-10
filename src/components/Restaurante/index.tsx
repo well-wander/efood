@@ -10,7 +10,9 @@ type Props = {
 
 const Restaurante = ({ restaurante }: Props) => (
   <S.Card>
-    <S.Imagem src={restaurante.imagem} alt={restaurante.nome} />
+    <S.Capa>
+      <S.Imagem src={restaurante.imagem} alt={restaurante.nome} />
+    </S.Capa>
     <S.Tags>
       {restaurante.tags.map((tag) => (
         <Tag key={tag}>{tag}</Tag>
