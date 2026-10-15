@@ -1,38 +1,17 @@
 import styled from 'styled-components'
 
-import {
-  cores,
-  filtroApetitoso,
-  filtroApetitosoHover,
-  sombras,
-} from '../../styles'
+import { cores } from '../../styles'
 
 export const Capa = styled.div`
-  position: relative;
-  height: 208px;
+  height: 217px;
   overflow: hidden;
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0) 40%
-    );
-    pointer-events: none;
-  }
 `
 
 export const Imagem = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: ${filtroApetitoso};
-  transition:
-    transform 0.6s ease,
-    filter 0.6s ease;
+  transition: transform 0.5s ease;
 `
 
 export const Card = styled.article`
@@ -40,51 +19,47 @@ export const Card = styled.article`
   display: flex;
   flex-direction: column;
   width: 100%;
-  overflow: hidden;
-  border-radius: 16px;
   background-color: ${cores.branco};
-  box-shadow: ${sombras.suave};
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: ${sombras.elevada};
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(230, 103, 103, 0.25);
 
     ${Imagem} {
-      transform: scale(1.08);
-      filter: ${filtroApetitosoHover};
+      transform: scale(1.06);
     }
   }
 `
 
 export const Tags = styled.div`
   position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  z-index: 1;
+  top: 16px;
+  right: 16px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 `
 
 export const Conteudo = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  align-items: flex-start;
+  padding: 8px 8px 7px;
+  border: 1px solid ${cores.salmao};
+  border-top: none;
 `
 
 export const Cabecalho = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 8px;
-  color: ${cores.titulo};
+  margin-bottom: 16px;
   font-size: 18px;
+  line-height: 21px;
   font-weight: 700;
 `
 
@@ -94,21 +69,19 @@ export const Nome = styled.h3`
 
 export const Nota = styled.span`
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
-  gap: 6px;
-  font-size: 16px;
+  gap: 8px;
 
   img {
-    width: 20px;
-    height: 20px;
+    width: 21px;
+    height: 21px;
   }
 `
 
 export const Descricao = styled.p`
   flex: 1;
   margin-bottom: 16px;
-  color: ${cores.texto};
   font-size: 14px;
   line-height: 22px;
+  white-space: pre-line;
 `

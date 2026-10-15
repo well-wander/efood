@@ -1,61 +1,39 @@
 import styled from 'styled-components'
 
-import {
-  cores,
-  filtroApetitoso,
-  filtroApetitosoHover,
-  sombras,
-} from '../../styles'
-
-export const Capa = styled.div`
-  height: 180px;
-  overflow: hidden;
-  border-radius: 10px;
-`
-
-export const Imagem = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: ${filtroApetitoso};
-  transition:
-    transform 0.6s ease,
-    filter 0.6s ease;
-`
+import { cores } from '../../styles'
 
 export const Card = styled.article`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 12px;
-  border-radius: 16px;
+  padding: 8px;
   background-color: ${cores.salmao};
-  box-shadow: ${sombras.suave};
   color: ${cores.bege};
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: ${sombras.elevada};
-
-    ${Imagem} {
-      transform: scale(1.08);
-      filter: ${filtroApetitosoHover};
-    }
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(230, 103, 103, 0.35);
   }
 `
 
+export const Imagem = styled.img`
+  width: 100%;
+  height: 167px;
+  object-fit: cover;
+`
+
 export const Nome = styled.h3`
-  margin: 12px 0 8px;
+  margin: 8px 0;
   font-size: 16px;
   font-weight: 900;
 `
 
 export const Descricao = styled.p`
   flex: 1;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   font-size: 14px;
   line-height: 22px;
 `

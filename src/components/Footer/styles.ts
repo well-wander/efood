@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 
 export const FooterContainer = styled.footer`
-  padding: 48px 0 40px;
+  padding: 40px 0;
   background-color: ${cores.bege};
 
   .container {
@@ -15,31 +15,27 @@ export const FooterContainer = styled.footer`
 
 export const RedesSociais = styled.ul`
   display: flex;
-  gap: 12px;
-  margin: 32px 0 72px;
+  gap: 8px;
+  margin: 32px 0 80px;
 
   a {
     display: block;
-    border-radius: 50%;
-    transition:
-      transform 0.25s ease,
-      filter 0.25s ease;
+    transition: transform 0.2s ease;
 
     &:hover {
-      transform: translateY(-4px) scale(1.15);
-      filter: brightness(0.88);
+      transform: translateY(-3px) scale(1.1);
     }
   }
 
   img {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 `
 
 export const Aviso = styled.p`
   max-width: 480px;
-  font-size: 11px;
-  line-height: 16px;
+  font-size: 10px;
+  line-height: 12px;
   text-align: center;
 `
