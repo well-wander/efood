@@ -22,6 +22,10 @@ export const GlobalCss = createGlobalStyle`
     list-style: none;
   }
 
+  html {
+    scrollbar-gutter: stable;
+  }
+
   body {
     background-color: ${cores.fundo};
     color: ${cores.salmao};
