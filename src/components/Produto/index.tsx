@@ -1,21 +1,24 @@
-import type { Produto as ProdutoModel } from '../../models/Produto'
+import type { Prato } from '../../models/Restaurante'
+import { encurta } from '../../utils'
 import Botao from '../Botao'
 import * as S from './styles'
 
 type Props = {
-  produto: ProdutoModel
+  prato: Prato
+  aoVerDetalhes: (prato: Prato) => void
 }
 
-const Produto = ({ produto }: Props) => (
+const Produto = ({ prato, aoVerDetalhes }: Props) => (
   <S.Card>
-    <S.Imagem src={produto.imagem} alt={produto.nome} />
-    <S.Nome>{produto.nome}</S.Nome>
-    <S.Descricao>{produto.descricao}</S.Descricao>
+    <S.Imagem src={prato.foto} alt={prato.nome} />
+    <S.Nome>{prato.nome}</S.Nome>
+    <S.Descricao>{encurta(prato.descricao, 160)}</S.Descricao>
     <Botao
       variante="secundario"
-      title={`Adicionar ${produto.nome} ao carrinho`}
+      title={`Ver mais detalhes de ${prato.nome}`}
+      onClick={() => aoVerDetalhes(prato)}
     >
-      Adicionar ao carrinho
+      Mais detalhes
     </Botao>
   </S.Card>
 )

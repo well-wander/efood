@@ -7,6 +7,7 @@ export const Card = styled.article`
   flex-direction: column;
   width: 100%;
   padding: 8px;
+  border-radius: 8px;
   background-color: ${cores.salmao};
   color: ${cores.bege};
   transition:
@@ -22,6 +23,7 @@ export const Card = styled.article`
 export const Imagem = styled.img`
   width: 100%;
   height: 167px;
+  border-radius: 8px;
   object-fit: cover;
 `
 
