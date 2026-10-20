@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 import fechar from '../../assets/fechar.png'
 import type { Prato } from '../../models/Restaurante'
+import { abrir, adicionar } from '../../store/reducers/carrinho'
 import { formataPreco } from '../../utils'
 import Botao from '../Botao'
 import * as S from './styles'
@@ -12,6 +14,14 @@ type Props = {
 }
 
 const Modal = ({ prato, aoFechar }: Props) => {
+  const dispatch = useDispatch()
+
+  const adicionarAoCarrinho = () => {
+    dispatch(adicionar(prato))
+    aoFechar()
+    dispatch(abrir())
+  }
+
   useEffect(() => {
     const fecharComEsc = (evento: KeyboardEvent) => {
       if (evento.key === 'Escape') aoFechar()
@@ -42,7 +52,11 @@ const Modal = ({ prato, aoFechar }: Props) => {
             <br />
             Serve: de {prato.porcao}
           </S.Descricao>
-          <Botao variante="secundario" title="Adicionar ao carrinho">
+          <Botao
+            variante="secundario"
+            title="Adicionar ao carrinho"
+            onClick={adicionarAoCarrinho}
+          >
             {`Adicionar ao carrinho - ${formataPreco(prato.preco)}`}
           </Botao>
         </S.Informacoes>

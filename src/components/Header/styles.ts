@@ -38,6 +38,21 @@ export const LinkRestaurantes = styled(Link)`
   }
 `
 
-export const Carrinho = styled.span`
+export const Carrinho = styled.button`
+  justify-self: end;
+  border: none;
+  background: none;
+  color: ${cores.salmao};
+  font: inherit;
   text-align: right;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${cores.salmaoEscuro};
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    justify-self: center;
+  }
 `
