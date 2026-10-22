@@ -6,6 +6,7 @@ export const cores = {
   bege: '#FFEBD9',
   fundo: '#FFF8F2',
   branco: '#FFFFFF',
+  titulo: '#7A1F1F',
 }
 
 export const breakpoints = {

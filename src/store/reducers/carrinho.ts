@@ -26,6 +26,9 @@ const carrinhoSlice = createSlice({
     remover: (state, action: PayloadAction<string>) => {
       state.itens = state.itens.filter((item) => item.chave !== action.payload)
     },
+    limpar: (state) => {
+      state.itens = []
+    },
     abrir: (state) => {
       state.aberto = true
     },
@@ -35,6 +38,7 @@ const carrinhoSlice = createSlice({
   },
 })
 
-export const { adicionar, remover, abrir, fechar } = carrinhoSlice.actions
+export const { adicionar, remover, limpar, abrir, fechar } =
+  carrinhoSlice.actions
 
 export default carrinhoSlice.reducer

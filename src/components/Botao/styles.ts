@@ -36,6 +36,11 @@ const estiloBase = css<Props>`
 
 export const BotaoContainer = styled.button<Props>`
   ${estiloBase}
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: wait;
+  }
 `
 
 export const BotaoLink = styled(Link)<Props>`

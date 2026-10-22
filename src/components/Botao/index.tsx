@@ -4,7 +4,9 @@ type Props = {
   children: string
   title: string
   to?: string
+  tipo?: 'button' | 'submit'
   variante?: 'primario' | 'secundario'
+  desabilitado?: boolean
   onClick?: () => void
 }
 
@@ -12,7 +14,9 @@ const Botao = ({
   children,
   title,
   to,
+  tipo = 'button',
   variante = 'primario',
+  desabilitado = false,
   onClick,
 }: Props) => {
   if (to) {
@@ -25,9 +29,10 @@ const Botao = ({
 
   return (
     <S.BotaoContainer
-      type="button"
+      type={tipo}
       title={title}
       $variante={variante}
+      disabled={desabilitado}
       onClick={onClick}
     >
       {children}
